@@ -1,11 +1,10 @@
-import { SettingsValueProps } from './components/settings/type';
 // routes
-import { PATH_DASHBOARD } from './routes/paths';
+import { PATH_DASHBOARD } from "./routes/paths";
 
 // API
 // ----------------------------------------------------------------------
 
-export const HOST_API = process.env.REACT_APP_HOST_API_KEY || '';
+export const HOST_API = process.env.REACT_APP_HOST_API_KEY || "";
 
 export const FIREBASE_API = {
   apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
@@ -56,16 +55,4 @@ export const NAVBAR = {
 export const ICON = {
   NAVBAR_ITEM: 22,
   NAVBAR_ITEM_HORIZONTAL: 20,
-};
-
-// SETTINGS
-// Please remove `localStorage` when you set settings.
-// ----------------------------------------------------------------------
-
-export const defaultSettings: SettingsValueProps = {
-  themeMode: 'light',
-  themeDirection: 'ltr',
-  themeColorPresets: 'default',
-  themeLayout: 'horizontal',
-  themeStretch: false,
 };

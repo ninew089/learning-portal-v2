@@ -1,9 +1,9 @@
-import { ReactNode } from 'react';
-import isString from 'lodash/isString';
+import { ReactNode } from "react";
+import isString from "lodash/isString";
 // @mui
-import { Box, Typography, Link } from '@mui/material';
+import { Box, Typography, Link } from "@mui/material";
 //
-import Breadcrumbs, { Props as BreadcrumbsProps } from './Breadcrumbs';
+import Breadcrumbs, { Props as BreadcrumbsProps } from "./Breadcrumbs";
 
 // ----------------------------------------------------------------------
 
@@ -17,13 +17,13 @@ export default function HeaderBreadcrumbs({
   links,
   action,
   heading,
-  moreLink = '' || [],
+  moreLink = "" || [],
   sx,
   ...other
 }: Props) {
   return (
     <Box sx={{ mb: 5, ...sx }}>
-      <Box sx={{ display: 'flex', alignItems: 'center' }}>
+      <Box sx={{ display: "flex", alignItems: "center" }}>
         <Box sx={{ flexGrow: 1 }}>
           <Typography variant="h4" gutterBottom>
             {heading}
@@ -48,7 +48,7 @@ export default function HeaderBreadcrumbs({
               variant="body2"
               target="_blank"
               rel="noopener"
-              sx={{ display: 'table' }}
+              sx={{ display: "table" }}
             >
               {href}
             </Link>

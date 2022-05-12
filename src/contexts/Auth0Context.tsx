@@ -1,9 +1,14 @@
-import { createContext, ReactNode, useEffect, useReducer } from 'react';
-import { Auth0Client } from '@auth0/auth0-spa-js';
+import { createContext, ReactNode, useEffect, useReducer } from "react";
+import { Auth0Client } from "@auth0/auth0-spa-js";
 // @types
-import { ActionMap, AuthState, AuthUser, Auth0ContextType } from '../@types/auth';
+import {
+  ActionMap,
+  AuthState,
+  AuthUser,
+  Auth0ContextType,
+} from "../@types/auth";
 //
-import { AUTH0_API } from '../config';
+import { AUTH0_API } from "../config";
 
 // ----------------------------------------------------------------------
 
@@ -16,9 +21,9 @@ const initialState: AuthState = {
 };
 
 enum Types {
-  init = 'INITIALIZE',
-  login = 'LOGIN',
-  logout = 'LOGOUT',
+  init = "INITIALIZE",
+  login = "LOGIN",
+  logout = "LOGOUT",
 }
 
 type Auth0AuthPayload = {
@@ -32,7 +37,8 @@ type Auth0AuthPayload = {
   [Types.logout]: undefined;
 };
 
-type Auth0Actions = ActionMap<Auth0AuthPayload>[keyof ActionMap<Auth0AuthPayload>];
+type Auth0Actions =
+  ActionMap<Auth0AuthPayload>[keyof ActionMap<Auth0AuthPayload>];
 
 const reducer = (state: AuthState, action: Auth0Actions) => {
   if (action.type === Types.init) {
@@ -73,8 +79,8 @@ function AuthProvider({ children }: AuthProviderProps) {
     const initialize = async () => {
       try {
         auth0Client = new Auth0Client({
-          client_id: AUTH0_API.clientId || '',
-          domain: AUTH0_API.domain || '',
+          client_id: AUTH0_API.clientId || "",
+          domain: AUTH0_API.domain || "",
           redirect_uri: window.location.origin,
         });
 
@@ -126,13 +132,13 @@ function AuthProvider({ children }: AuthProviderProps) {
     <AuthContext.Provider
       value={{
         ...state,
-        method: 'auth0',
+        method: "auth0",
         user: {
           id: state?.user?.sub,
           photoURL: state?.user?.picture,
           email: state?.user?.email,
-          displayName: 'Jaydon Frankie',
-          role: 'admin',
+          displayName: "Jaydon Frankie",
+          role: "admin",
         },
         login,
         logout,
