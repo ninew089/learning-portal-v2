@@ -4,6 +4,7 @@ import { Navigate, useRoutes, useLocation } from "react-router-dom";
 import useAuth from "../hooks/useAuth";
 // layouts
 import MainLayout from "../layouts/main";
+import Dashboard from "../layouts/dashboard";
 // components
 import LoadingScreen from "../components/LoadingScreen";
 
@@ -29,7 +30,7 @@ export default function Router() {
   return useRoutes([
     {
       path: "/",
-      element: <MainLayout />,
+      element: <Dashboard />,
       children: [
         { element: <HomePage />, index: true },
         // { path: "about-us", element: <About /> },
