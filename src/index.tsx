@@ -13,9 +13,6 @@ import "react-image-lightbox/style.css";
 // map
 import "mapbox-gl/dist/mapbox-gl.css";
 
-// editor
-import "react-quill/dist/quill.snow.css";
-
 // slick-carousel
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -28,13 +25,10 @@ import "react-lazy-load-image-component/src/effects/black-and-white.css";
 import ReactDOM from "react-dom";
 import { BrowserRouter } from "react-router-dom";
 import { HelmetProvider } from "react-helmet-async";
-import { Provider as ReduxProvider } from "react-redux";
-import { PersistGate } from "redux-persist/lib/integration/react";
+
 // @mui
 import AdapterDateFns from "@mui/lab/AdapterDateFns";
 import LocalizationProvider from "@mui/lab/LocalizationProvider";
-// redux
-import { store, persistor } from "./redux/store";
 // contexts
 import { CollapseDrawerProvider } from "./contexts/CollapseDrawerContext";
 
@@ -56,17 +50,13 @@ import reportWebVitals from "./reportWebVitals";
 ReactDOM.render(
   <AuthProvider>
     <HelmetProvider>
-      <ReduxProvider store={store}>
-        <PersistGate loading={null} persistor={persistor}>
-          <LocalizationProvider dateAdapter={AdapterDateFns}>
-            <CollapseDrawerProvider>
-              <BrowserRouter>
-                <App />
-              </BrowserRouter>
-            </CollapseDrawerProvider>
-          </LocalizationProvider>
-        </PersistGate>
-      </ReduxProvider>
+      <LocalizationProvider dateAdapter={AdapterDateFns}>
+        <CollapseDrawerProvider>
+          <BrowserRouter>
+            <App />
+          </BrowserRouter>
+        </CollapseDrawerProvider>
+      </LocalizationProvider>
     </HelmetProvider>
   </AuthProvider>,
   document.getElementById("root")

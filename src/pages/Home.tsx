@@ -2,6 +2,7 @@
 import { styled } from "@mui/material/styles";
 // components
 import Page from "../components/Page";
+import { Button } from "@mui/material";
 // sections
 
 // ----------------------------------------------------------------------
@@ -22,6 +23,9 @@ export default function HomePage() {
   return (
     <Page title="The starting point for your next project">
       <RootStyle>
+        <Button color="primary" variant="contained">
+          ada
+        </Button>
         <ContentStyle></ContentStyle>
       </RootStyle>
     </Page>
