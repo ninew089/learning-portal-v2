@@ -1,11 +1,17 @@
-import { ReactNode } from 'react';
-import { IconifyIcon } from '@iconify/react';
+import { ReactNode } from "react";
+import { IconifyIcon } from "@iconify/react";
 // @mui
-import { useTheme, styled } from '@mui/material/styles';
-import { Box, BoxProps, Stack, StackProps, IconButtonProps } from '@mui/material';
+import { useTheme, styled } from "@mui/material/styles";
+import {
+  Box,
+  BoxProps,
+  Stack,
+  StackProps,
+  IconButtonProps,
+} from "@mui/material";
 //
-import Iconify from '../Iconify';
-import { IconButtonAnimate } from '../animate';
+import Iconify from "../Iconify";
+import { IconButtonAnimate } from "../animate";
 
 // ----------------------------------------------------------------------
 
@@ -16,16 +22,16 @@ interface ArrowStyleProps extends IconButtonProps {
 }
 
 const ArrowStyle = styled(IconButtonAnimate, {
-  shouldForwardProp: (prop) => prop !== 'filled',
+  shouldForwardProp: (prop) => prop !== "filled",
 })<ArrowStyleProps>(({ filled, theme }) => ({
   width: BUTTON_SIZE,
   height: BUTTON_SIZE,
-  cursor: 'pointer',
-  borderRadius: '50%',
-  display: 'flex',
-  alignItems: 'center',
-  justifyContent: 'center',
-  '&:hover': {
+  cursor: "pointer",
+  borderRadius: "50%",
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center",
+  "&:hover": {
     color: theme.palette.text.primary,
   },
   ...(filled && {
@@ -33,7 +39,7 @@ const ArrowStyle = styled(IconButtonAnimate, {
     borderRadius: Number(theme.shape.borderRadius) * 1.5,
     color: theme.palette.common.white,
     backgroundColor: theme.palette.grey[900],
-    '&:hover': {
+    "&:hover": {
       opacity: 1,
       color: theme.palette.common.white,
       backgroundColor: theme.palette.grey[900],
@@ -62,12 +68,12 @@ export default function CarouselArrows({
   ...other
 }: Props) {
   const theme = useTheme();
-  const isRTL = theme.direction === 'rtl';
+  const isRTL = theme.direction === "rtl";
 
   const style = {
-    position: 'absolute',
+    position: "absolute",
     mt: -2.5,
-    top: '50%',
+    top: "50%",
     zIndex: 9,
   } as const;
 
@@ -107,23 +113,23 @@ export default function CarouselArrows({
 
 const leftIcon = (customIcon?: IconifyIcon | string, isRTL?: boolean) => (
   <Iconify
-    icon={customIcon ? customIcon : 'eva:arrow-right-fill'}
+    icon={customIcon ? customIcon : "eva:arrow-right-fill"}
     sx={{
       width: 20,
       height: 20,
-      transform: ' scaleX(-1)',
-      ...(isRTL && { transform: ' scaleX(1)' }),
+      transform: " scaleX(-1)",
+      ...(isRTL && { transform: " scaleX(1)" }),
     }}
   />
 );
 
 const rightIcon = (customIcon?: IconifyIcon | string, isRTL?: boolean) => (
   <Iconify
-    icon={customIcon ? customIcon : 'eva:arrow-right-fill'}
+    icon={customIcon ? customIcon : "eva:arrow-right-fill"}
     sx={{
       width: 20,
       height: 20,
-      ...(isRTL && { transform: ' scaleX(-1)' }),
+      ...(isRTL && { transform: " scaleX(-1)" }),
     }}
   />
 );

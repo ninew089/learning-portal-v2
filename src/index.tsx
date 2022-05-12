@@ -1,6 +1,3 @@
-// i18n
-import "./locales/i18n";
-
 // highlight
 import "./utils/highlight";
 
@@ -9,9 +6,6 @@ import "simplebar/src/simplebar.css";
 
 // lightbox
 import "react-image-lightbox/style.css";
-
-// map
-import "mapbox-gl/dist/mapbox-gl.css";
 
 // slick-carousel
 import "slick-carousel/slick/slick.css";
@@ -36,11 +30,6 @@ import { CollapseDrawerProvider } from "./contexts/CollapseDrawerContext";
 // https://docs-minimals.vercel.app/authentication/ts-version
 
 import { AuthProvider } from "./contexts/JWTContext";
-// import { AuthProvider } from './contexts/AwsCognitoContext';
-// import { AuthProvider } from './contexts/Auth0Context';
-// import { AuthProvider } from './contexts/FirebaseContext';
-
-//
 import App from "./App";
 import * as serviceWorkerRegistration from "./serviceWorkerRegistration";
 import reportWebVitals from "./reportWebVitals";

@@ -24,7 +24,7 @@ export default function HomePage() {
     <Page title="The starting point for your next project">
       <RootStyle>
         <Button color="primary" variant="contained">
-          ada
+          adsasd
         </Button>
         <ContentStyle></ContentStyle>
       </RootStyle>
